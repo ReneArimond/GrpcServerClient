@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient.Protos";
+
+package test;
+
+service Test{
+	rpc SendMessage (TestMessage) returns (TestMessage);
+}
+
+message TestMessage{
+	string payload = 1;
+}
