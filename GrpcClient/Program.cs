@@ -12,7 +12,7 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
-            await Task.Delay(2000);
+            await Task.Delay(2000); // give server some time to start
             using var channel = CreateChannelWithCert("https://localhost:5001", new X509Certificate2("GrpcClient.pfx", "P@55w0rd"));
             var client = new Test.TestClient(channel);
             await client.SendMessageAsync(new TestMessage { Payload = "test client" });

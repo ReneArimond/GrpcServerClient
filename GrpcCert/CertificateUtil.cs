@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace GrpcCert
 {
     /** <summary>provides functions to create an x509 certificate
-     * adopted and modified from: https://stackoverflow.com/questions/13806299/how-can-i-create-a-self-signed-certificate-using-c</summary>
+     * adopted and modified from: https://stackoverflow.com/questions/13806299/how-can-i-create-a-self-signed-certificate-using-c </summary>
      */
     public class CertificateUtil
     {
@@ -34,10 +34,10 @@ namespace GrpcCert
             File.WriteAllBytes(Path.Join(certDir, AddOrChangeExtension(certName, ".pfx")), cert.Export(X509ContentType.Pfx, "P@55w0rd"));
 
             // Create Base 64 encoded CER (public key only)
-            File.WriteAllText(Path.Join(certDir, AddOrChangeExtension(certName, ".cer")),
-                "-----BEGIN CERTIFICATE-----\r\n"
-                + Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.InsertLineBreaks)
-                + "\r\n-----END CERTIFICATE-----");
+            //File.WriteAllText(Path.Join(certDir, AddOrChangeExtension(certName, ".cer")),
+            //    "-----BEGIN CERTIFICATE-----\r\n"
+            //    + Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.InsertLineBreaks)
+            //    + "\r\n-----END CERTIFICATE-----");
         }
 
         /** <summary>generates a client cert from the root cert</summary>

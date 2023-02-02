@@ -26,7 +26,7 @@ namespace GrpcCert
                 {
                     httpsOptions.ClientCertificateMode = Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode.RequireCertificate;
                     httpsOptions.ServerCertificate = cert;
-                   // httpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+                    httpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12;
                 });
             });
             services.AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
@@ -48,6 +48,7 @@ namespace GrpcCert
             }
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
