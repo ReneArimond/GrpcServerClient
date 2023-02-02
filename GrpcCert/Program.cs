@@ -9,7 +9,7 @@ namespace GrpcCert
         {
             //CertificateUtil.GenerateRootCertificate("", "GrpcServer");
             //CertificateUtil.GenerateClientCertificate("", "GrpcServer", "", "GrpcClient");
-            CreateHostBuilder(args).Build().Run();
+            //CreateHostBuilder(args).Build().Run();
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.

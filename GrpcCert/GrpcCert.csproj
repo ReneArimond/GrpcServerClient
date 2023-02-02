@@ -19,9 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="GrpcClient.pfx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="GrpcServer.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

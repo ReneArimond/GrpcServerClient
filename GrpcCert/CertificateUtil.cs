@@ -70,7 +70,7 @@ namespace GrpcCert
                 rng.GetBytes(serial);
             }
             var clientCert = req.Create(rootCert, DateTimeOffset.Now, rootCert.NotAfter, serial);
-            var clientCertWithPrivateKey = ECDsaCertificateExtensions.CopyWithPrivateKey(clientCert, ecdsa);
+            var clientCertWithPrivateKey = ECDsaCertificateExtensions.CopyWithPrivateKey(clientCert, ecdsa);     
             File.WriteAllBytes(Path.Join(targetDir, AddOrChangeExtension(targetName, ".pfx")), clientCertWithPrivateKey.Export(X509ContentType.Pfx, "P@55w0rd"));
         }
 
